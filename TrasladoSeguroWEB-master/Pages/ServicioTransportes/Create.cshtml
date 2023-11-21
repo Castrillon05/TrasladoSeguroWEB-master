@@ -1,0 +1,44 @@
+﻿@page
+@model TrasladoSeguroWEB.Pages.ServicioTransportes.CreateModel
+@{
+    ViewData["Title"] = "Create";
+}
+<h1>Create</h1>
+
+<h4>ServicioTransporte</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="ServicioTransporte.Id" class="control-label"></label>
+                <input asp-for="ServicioTransporte.Id" class="form-control"/>
+                <span asp-validation-for="ServicioTransporte.Id"class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServicioTransporte.NombreConductor" class="control-label"></label>
+                <input asp-for="ServicioTransporte.NombreConductor" class="form-control" />
+                <span asp-validation-for="ServicioTransporte.NombreConductor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServicioTransporte.Fecha" class="control-label"></label>
+                <input asp-for="ServicioTransporte.Fecha" class="form-control" />
+                <span asp-validation-for="ServicioTransporte.Fecha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServicioTransporte.Description" class="control-label"></label>
+                <input asp-for="ServicioTransporte.Description" class="form-control" />
+                <span asp-validation-for="ServicioTransporte.Description" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group mt-3">
+                <input type="submit" value="Create"class="btn btn-success"/>
+                <a asp-page="Index" class="btn btn-primary">Back to list </a>
+
+            </div>
+        </form>
+    </div>
+</div>

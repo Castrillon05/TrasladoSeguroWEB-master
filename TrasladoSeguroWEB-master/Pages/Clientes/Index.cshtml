@@ -1,0 +1,56 @@
+﻿@page
+@model TrasladoSeguroWEB.Pages.Clientes.IndexModel
+@{
+    ViewData["Title"] = "Index Clientes";
+}
+<h1>Index Clientes</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-success">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model=>model.Clientes[0].Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model=>model.Clientes[0].Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model=>model.Clientes[0].FechaNacimiento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model=>model.Clientes[0].ServicioTransporteId)
+            </th>
+
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Clientes)
+        {
+                            <tr>
+                                <td>
+                    @Html.DisplayFor(modelItem=>item.Id)
+                                </td>
+                                <td>
+                    @Html.DisplayFor(modelItem=>item.Nombre)
+                                </td>
+                                    <td>
+                    @Html.DisplayFor(modelItem=>item.FechaNacimiento)
+                                    </td>
+                                        <td>
+                    @Html.DisplayFor(modelItem=>item.ServicioTransporteId)
+                                        </td>
+
+
+                                <td>
+                                     <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                                 <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                                </td>
+                                </tr>
+        }
+    </tbody>
+    </table>
